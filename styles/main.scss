@@ -1,0 +1,764 @@
+@import 'base/reset';
+@import 'base/variables';
+@import url(fonts.css);
+@import 'base/mixins';
+
+.d-flex{
+    display: flex;
+}
+
+body{
+    margin: auto;
+}
+
+header{
+    @include boxsize(1440px, 700px);
+    background: url(../images/Background.png) no-repeat;
+    background-size: 100%;
+    padding-top: 40px;
+}
+
+%topline_font_style{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+%topline_name_font{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: #FFFFFF;
+}
+
+.topline{
+    height: 36px;
+    justify-content: space-evenly;
+    &__name{
+        @extend %topline_name_font;
+        margin-right: 330px;
+    }
+    &__signin{
+        @extend %topline_font_style;
+        text-decoration: none;
+        margin-right: 22px;
+        padding-bottom: 6px;
+    }
+    &__signup{
+        @include boxsize(90px, 36px);
+        @extend %topline_font_style;
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 40px;
+        background-color: #00000000;
+        margin-right: 60px;
+    }
+}
+
+.topline_name_mobile{
+    display: none;
+    @extend %topline_name_font;
+}
+%headerbox_textstyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+}
+.headerbox{
+    margin-top: 153px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title{
+        @extend %headerbox_textstyle;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 63px;
+        color: #FFFFFF;
+    }
+
+    &__text{
+        @extend %headerbox_textstyle;
+        font-family: 'Roboto_Light';
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 24px;
+        color: #F7F3F2;
+        margin-top: 28px;
+        margin-bottom: 33px;
+    }
+
+    &__button{
+        @include boxsize(225px, 40px);
+        @extend %headerbox_textstyle;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        background: #FF4E50;
+        border-radius: 40px;
+        border: none;
+    }
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 89px;
+    margin-bottom: 6px;
+}
+.section_name{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #444444;
+    margin-bottom: 35px;
+}
+
+%steps_size{
+    @include boxsize(300px, 400px);
+    background-size: 100%; 
+    padding: 0 25px 21px;
+    flex-direction: column;
+    justify-content: flex-end;     
+}
+
+.steps{
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    &__one{
+        @extend %steps_size;
+        background: url(../images/Step1.png) no-repeat;
+        margin-right: 20px;
+    }
+
+    &__two{
+        @extend %steps_size;
+        background: url(../images/Step2.png) no-repeat;
+        margin-right: 20px;       
+    }
+
+    &__three{
+        @extend %steps_size;
+        background: url(../images/Step3.png) no-repeat;
+    }
+
+    &__button{
+        @include boxsize(70px, 20px);
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        background-color: #FF4E50;
+        border-radius: 40px;
+        border: none;
+    }
+
+    &__title{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 26px;
+        color: #FFFFFF;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    &__text{
+        font-family: 'Roboto_Light';
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        color: #E3E3E3;
+    }
+
+}
+
+.partner{
+    justify-content: center;
+
+    &__unit{
+        flex-direction: column;
+        @include boxsize(221px, 205px);
+        font-style: normal;
+        font-size: 14px;
+        &__mr{
+            margin-right: 19px;
+        }
+
+        &__img{
+            @include boxsize(120px, 120px);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        &__mood{
+            position: relative;
+            left: 89px;
+            top: -32px;
+            @include boxsize(32px, 32px);
+            border-radius: 50%;
+            padding: 8px;
+        }
+
+        &__bg-red{
+            background-color: #FF4E50;
+        }
+        &__bg-blue{
+            background-color: #19D4CA;
+        }
+        &__bg-yellow{
+            background-color: #FFA710;;
+        }
+        &__bg-violet{
+            background-color: #667DF3;
+        }
+
+        &__name{
+            font-family: 'Montserrat';
+            font-weight: bold;
+            line-height: 17px;
+            text-align: center;
+            color: #444444;
+            margin-top: 17px;
+            margin-bottom: 12px;
+        }
+        &__text{
+            font-family: 'Roboto_Light';
+            font-weight: 300;
+            line-height: 14px;
+            text-align: center;
+            color: #666666;
+        }
+    }
+}
+
+.partner_button{
+    margin: 36px auto 0;
+    justify-content: center;
+    align-items: center;
+    @include boxsize(180px, 40px);
+    background: #FFFFFF;
+    border: 2px solid #FF4E50;
+    box-sizing: border-box;
+    border-radius: 40px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FF4E50;
+}
+
+.activities{
+    justify-content: center;
+    margin: auto;
+    background-size: 100%;
+    &__sport{
+        @include boxsize(300px, 310px);
+        background: url(../images/Sport.png) no-repeat;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    &__health{
+        @include boxsize(300px, 310px);
+        background: url(../images/Healath.png) no-repeat;
+        margin-right: 20px;
+    }
+    &__extreme{
+        @include boxsize(300px, 310px);
+        background: url(../images/Extreme.png) no-repeat;
+    }
+    &__games{
+        @include boxsize(300px, 310px);
+        background: url(../images/Games.png) no-repeat;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    &__culture{
+        @include boxsize(620px, 310px);
+        background: url(../images/Culture.png) no-repeat;
+    }
+    &__spa{
+        @include boxsize(620px, 310px);
+        background: url(../images/Spa.png) no-repeat;
+        margin-right: 20px;
+    }
+    &__travel{
+        @include boxsize(300px, 310px);
+        background: url(../images/Travel.png) no-repeat;
+    }  
+}
+
+.search_title{
+    justify-content: center;
+    font-family: 'Roboto_light';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 14px;
+    align-items: flex-end;
+    text-align: center;
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.search_box{
+    margin: 0 auto 100px;
+    font-style: normal;
+    font-size: 14px;
+
+    &__text{
+        @include boxsize(299px, 40px);
+        font-family: 'Roboto_Light';
+        font-weight: 300;
+        line-height: 16px;
+        color: #999999;
+        background-color: #FFFFFF;
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+        border-radius: 3px;
+        padding-left: 14px;
+        margin-right: 10px;
+    }
+    &__button{
+        @include boxsize(172px, 40px);        
+        background-color: #FF4E50;
+        border-radius: 40px;
+        border: none;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+}
+
+.footer_line{
+    @include boxsize(100%, 2px);
+    background-color: #FF4E50;
+}
+
+footer{
+    @include boxsize(940px, 260px);
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding-top: 38px;
+}
+
+.footer_maintitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;    
+    color: #FF4E50;
+}
+
+.footer_coloumn{
+    flex-direction: column;
+}
+
+.footer_col{
+    flex-direction: column;
+}
+
+.footer_title{
+    font-family: 'Montserrat_Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #444444;
+    margin-bottom: 10px;
+}
+
+.footer_maintext{
+    font-family: 'Roboto_Light';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+    color: #999999;
+}
+
+.Bitmap_coloumn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.Bitmap_title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color: #CCCCCC;
+    margin-bottom: 7px;
+}
+
+@media screen and (max-width: 778px) {
+    header{
+        @include boxsize(768px, 700px);
+        background: url(../images/Background_md.png) no-repeat;
+        background-size: 100%;
+    }
+    
+    .topline{
+        &__signup{
+            margin-right: 20px;
+        }
+    }
+
+    section{
+        margin-top: 95px;
+        margin-bottom: 0px;
+    }
+
+    .section_name{
+        font-size: 22px;
+        line-height: 27px;
+    }
+
+    %steps_size_md{
+        @include boxsize(236px, 400px);
+        background-size: 100%;
+        padding: 0 20px 16px;   
+    }
+
+    .steps{
+        justify-content: center;
+        align-items: center;
+      
+        &__one{
+            @extend %steps_size_md;
+            background: url(../images/Step1md.png) no-repeat;
+            margin-right: 20px;      
+        }
+    
+        &__two{
+            @extend %steps_size_md;
+            background: url(../images/Step2md.png) no-repeat;
+        }
+    
+        &__three{
+            @extend %steps_size_md;
+            background: url(../images/Step3md.png) no-repeat;
+        }
+    
+        &__title{
+            line-height: 14px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        &__button_mb{
+            margin-bottom: 20px;
+        }
+    }
+
+    .partner{
+        flex-wrap: wrap;   
+        margin: 0 20px;
+        &__unit{
+            flex-direction: column;
+            @include boxsize(236px, 224px);
+            font-style: normal;
+            font-size: 14px;
+            &__mr{
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .partner_button{
+        margin: 40px auto 0;
+    }
+
+    .activities{
+        justify-content: center;
+        margin: auto;
+        background-size: 100%;
+        &__sport{
+            @include boxsize(236px, 310px);
+            background: url(../images/Sport_md.png) no-repeat;
+        }
+        &__health{
+            @include boxsize(236px, 310px);
+            background: url(../images/Healath_md.png) no-repeat;
+        }
+        &__extreme{
+            @include boxsize(236px, 310px);
+            background: url(../images/Extreme_md.png) no-repeat;
+        }
+        &__games{
+            @include boxsize(236px, 310px);
+            background: url(../images/Games_md.png) no-repeat;
+
+        }
+        &__culture{
+            @include boxsize(492px, 310px);
+            background: url(../images/Culture_md.png) no-repeat;
+        }
+        &__spa{
+            @include boxsize(492px, 310px);
+            background: url(../images/Spa_md.png) no-repeat;
+        }
+        &__travel{
+            @include boxsize(236px, 310px);
+            background: url(../images/Travel_md.png) no-repeat;
+        }  
+    }
+
+    footer{
+        @include boxsize(692px, 244px);
+    }
+
+}
+
+@media screen and (max-width: 330px)  {
+    header{
+        @include boxsize(320px, 540px);
+        background: url(../images/Background_sm.png) no-repeat;
+        background-size: 100%;
+        padding-top: 20px;
+    }
+    
+    .topline{
+        justify-content: center;
+        &__name{
+            display: none;
+        }
+        &__signin{
+            margin-left: 10px;
+        }
+        &__signup{
+            margin-right: 0px;
+        }
+    }
+
+    .topline_name_mobile{
+        display: flex;
+        justify-content: center;
+        margin-top: 97px;
+        margin-bottom: 26px;
+    }
+
+    .headerbox{
+        margin-top: 0px;
+
+        &__title{
+            font-size: 30px;
+            line-height: 37px;
+        }
+    
+        &__text{
+            font-size: 18px;
+            margin: 5px 20px 15px;
+        }
+    
+        &__button{
+            @include boxsize(280px, 40px);
+        }
+    }
+
+    section{
+        margin-top: 35px;
+        margin-bottom: 0px;
+    }
+
+    .section_name{
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 15px;
+        width: 300px;
+        padding-left: 20px;
+    }
+
+    %steps_size_sm{
+        @include boxsize(300px, 240px);
+        background-size: 100%;   
+        margin-right: 0px;
+        padding: 0 30px 16px 20px;           
+    }
+    
+    .steps{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+        &__one{
+            @extend %steps_size_sm;
+            background: url(../images/Step1sm.png) no-repeat;
+            margin-bottom: 10px;
+        }
+    
+        &__two{
+            @extend %steps_size_sm;
+            background: url(../images/Step2sm.png) no-repeat;
+            margin-bottom: 10px;
+        }
+    
+        &__three{
+            @extend %steps_size_sm;
+            background: url(../images/Step3sm.png) no-repeat;
+        }
+    
+    }
+
+    .partner{
+        flex-wrap: wrap;   
+        &__unit{
+            flex-direction: column;
+            @include boxsize(236px, 224px);
+            font-style: normal;
+            font-size: 14px;
+            &__mr{
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .partner_button{
+        @include boxsize(280px, 40px);
+        margin: 34px auto 0;
+
+    }
+
+    .activities{
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto;
+        background-size: 100%;
+        &__mob{
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        &__sport{
+            @include boxsize(300px, 120px);
+            background: url(../images/Sport_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__health{
+            @include boxsize(300px, 120px);
+            background: url(../images/Healath_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__extreme{
+            @include boxsize(300px, 120px);
+            background: url(../images/Extreme_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__games{
+            @include boxsize(300px, 120px);
+            background: url(../images/Games_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__culture{
+            @include boxsize(300px, 120px);
+            background: url(../images/Culture_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__spa{
+            @include boxsize(300px, 120px);
+            background: url(../images/Spa_sm.png) no-repeat;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        &__travel{
+            @include boxsize(300px, 120px);
+            background: url(../images/Travel_sm.png) no-repeat;
+        }  
+    }
+
+    .search_title{
+        margin-bottom: 15px;
+    }
+
+    .search_box{
+        font-style: normal;
+        font-size: 14px;
+    
+        &__text{
+            @include boxsize(280px, 40px);
+            padding-left: 15px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        &__button{
+            @include boxsize(280px, 40px);        
+            margin-left: 20px;
+            margin-bottom: 40px;
+        }
+    }
+
+    footer{
+        @include boxsize(300px, 260px);
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        padding-top: 38px;
+    }
+    
+    .footer_maintitle{
+        margin-bottom: 7px;
+    }
+
+    .footer_coloumn{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_col{
+        @include boxsize(220px, 26px);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .footer_title{
+        margin-top: 6px;
+        margin-bottom: 1px;
+    }
+    
+    .Bitmap_coloumn{
+        justify-content: center;
+        align-items: center;
+        margin-top: 13px;
+    }
+}
